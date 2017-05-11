@@ -12,16 +12,17 @@ public class HomeController
 	{
 		return "home/index";
 	}
+	
 	@RequestMapping("/login.html")
 	public String login()
 	{
-		return "/login.html";
+		return "/login";
 	}
 	
 	@RequestMapping("/login-error.html")
 	public String loginError(Model model)
 	{
 		model.addAttribute("loginError", true);
-	    return "/login.html";
+	    return "/login";
 	}
 }

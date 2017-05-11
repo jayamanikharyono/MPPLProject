@@ -10,7 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
-	public void configure(HttpSecurity httpSecurity) throws Exception
+	protected void configure(HttpSecurity httpSecurity) throws Exception
 	{
 		httpSecurity.authorizeRequests()
 			.antMatchers("/").hasRole("USER")
@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 			.failureUrl("/login-error.html")
 			.and()
 			.logout()
-			.logoutSuccessUrl("/index.html");
+			.logoutSuccessUrl("/home/index.html");
 	}
 	
 	@Autowired
