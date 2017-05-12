@@ -29,6 +29,6 @@ public class HomeController
 	@RequestMapping("/access-denied")
 	public String accessDenied()
 	{
-		return "accesDeniedPage";
+		return "error/accessDeniedPage";
 	}
 }

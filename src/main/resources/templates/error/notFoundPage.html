@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+    <head>
+        <title>Not Found</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/main.css" th:href="@{/css/main.css}" />
+    </head>
+    <body>
+        Logged user: <span sec:authentication="name">Bob</span>
+		Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+		<div sec:authorize="isAuthenticated()">
+		  This content is only shown to authenticated users.
+		</div>
+		<div sec:authorize="hasRole('ADMIN')">
+		  This content is only shown to administrators.
+		</div>
+		<div sec:authorize="hasRole('USER')">
+		  This content is only shown to users.
+		</div>
+		<h1>Not Found</h1>
+    </body>
+</html>
