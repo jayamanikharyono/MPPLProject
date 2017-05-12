@@ -1,5 +1,6 @@
 package com.mppl.controller;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,19 +11,24 @@ public class HomeController
 	@RequestMapping(value="/")
 	public String home()
 	{
-		return "home/index";
+		return "/home/indexPage";
 	}
 	
-	@RequestMapping("/login.html")
+	@RequestMapping("/login")
 	public String login()
 	{
-		return "/login";
+		return "/loginPage";
 	}
 	
-	@RequestMapping("/login-error.html")
+	@RequestMapping("/login-error")
 	public String loginError(Model model)
 	{
 		model.addAttribute("loginError", true);
-	    return "/login";
+	    return "/loginPage";
+	}
+	@RequestMapping("/access-denied")
+	public String accessDenied()
+	{
+		return "accesDeniedPage";
 	}
 }
